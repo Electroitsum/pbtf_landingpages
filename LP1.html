@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>PBTF</title>
+    <style type="text/css">
+      @font-face {
+        font-family: GothamBookRegular;
+        src: url("fonts/GothamBookRegular.otf");
+      }
+      @font-face {
+        font-family: GothamBold;
+        src: url("fonts/GothamBold.otf");
+      }
+      body{
+        background-color: #f2f2f2;
+        font-family: GothamBookRegular;
+      }
+      .main-cont {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+      }
+
+      .bodyhead {
+        min-height: 100px;
+        padding: 20px;
+      }
+
+      .main-body {
+        width: 100%;
+        height: 100%;
+        flex-wrap: wrap-reverse;
+      }
+
+      /* .sect1 {
+        padding: 50px;
+      } */
+
+      .thank-text {
+        display: inline-block;
+        font-size: 24px;
+        padding: 10% 40% 10% 5%;
+        font-weight: 600;
+        color: #1280c4;
+      }
+      label {
+        display: block;
+      }
+      li {
+        padding-left: 5%;
+      }
+      .notearea:focus {
+        border: none;
+        outline: none;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      ul li {
+        padding-bottom: 20px;
+      }
+      .qustion-text {
+        font-size: 17px;
+        font-weight: 600;
+        color: #1280c4;
+        padding-top: 20px;
+        
+      }
+
+      .other-input {
+        outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        width: 80%;
+        background: transparent;
+      }
+
+      .other-input:focus {
+        border-bottom: 1px solid black;
+      }
+
+      .form-input {
+        padding: 5px;
+        border-radius: 2px;
+        margin-bottom: 10px;
+        border: 1px solid #acacac;
+        outline: none;
+      }
+
+      .foot_text {
+        text-align: center;
+        margin: 0;
+      }
+
+      .bttn{
+        display: inline-block;
+        min-width: 48%;
+        padding: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        color: white;
+        background-color: #ed1c24;
+        border: none;
+        margin-top: 50px;
+        margin-bottom: 100px;
+      }
+      .popup {
+        position: fixed;
+        width: 400px;
+        height: 300px;
+        background-color: #BEE7F8;
+        top: -300px;
+        left: calc(50% - 200px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+        transition: top linear 0.3s;
+      }
+      .popup .close-icon {
+        border: 2px solid #1280c4;
+        border-radius: 50%;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-top: 18px;
+        margin-right: 18px;
+      }
+      .popup-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 30px;
+        display: table;
+      }
+      .popup-footer .color-1 {
+        display: inline-block;
+        background-color: red;
+        width: 80px;
+        height: 100%;
+      }
+      .popup-footer .color-2 {
+        display: inline-block;
+        background-color: yellow;
+        width: 50px;
+        height: 100%;
+      }
+      .popup-footer .color-3 {
+        display: inline-block;
+        background-color: green;
+        width: 150px;
+        height: 100%;
+      }
+      .popup-footer .color-4 {
+        display: inline-block;
+        background-color: #1280c4;
+        width: 120px;
+        height: 100%;
+      }
+      @media screen and (max-width: 1024px) {
+        .thank-text {
+          padding-right: 25%;
+        }
+      }
+      @media screen and (max-width: 420px) {
+        .bodyhead img {
+          height: 80px;
+        }
+        .popup {
+          width: 92vw;
+          left: 4vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="popup" onclick="hidepopup()">
+      <span class="close-icon">
+        <img height="15px" src="img/X@1X.png">
+      </span>
+      <p class="text-center" style="font-family: GothamBold;color: #1180C4;font-size: 20px;">SUCCESS! Thank you for taking the time to share your thoughts. We value your input and your partnership.</p>
+    <div class="popup-footer">
+      <span class="color-1"></span>
+      <span class="color-2"></span>
+      <span class="color-3"></span>
+      <span class="color-4"></span>
+    </div>
+    </div>
+    <div class="container">
+      <div class="main-cont">
+        <div class="bodyhead">
+          <a href="http://www.curethekids.org/" target="_blank"><img src="img/logo.png" alt="logo.png" /></a>
+        </div>
+        <div class="row gx-0 main-body">
+          <span class="col-12 col-lg-6 sect1"
+            ><span class="thank-text"
+              >Thank you for taking a moment to share your input—it’s so
+              helpful!</span
+            >
+            <ul>
+              <li style="background-color: #e5f8fd;">
+                <p class="qustion-text">
+                  <span style="color: #89c011;">1. </span>What would you like to hear more about from the Pediatric
+                  Brain Tumor Foundation? <span style="color: #333;font-weight: 400;"><em>(check one)</em></span>
+                </p>
+
+                <label for="input1_1">
+                  <input
+                    type="checkbox"
+                    id="input1_1"
+                    name="input1"
+                  />&nbsp;Remarkable patients
+                </label>
+                <label for="input1_2">
+                  <input
+                    type="checkbox"
+                    id="input1_2"
+                    name="input1"
+                  />&nbsp;Outstanding doctors and scientists
+                </label>
+                <label for="input1_3">
+                  <input
+                    type="checkbox"
+                    id="input1_3"
+                    name="input1"
+                  />&nbsp;Inspiring community initiatives
+                </label>
+                <label for="input1_4" style="display: inline-block">
+                  <input type="checkbox" id="input1_4" name="input1" />
+                  Other:
+                </label>
+                <input
+                  class="other-input"
+                  type="text"
+                  id="input1_4"
+                  name="input1"
+                />
+              </li>
+              <li>
+                <p class="qustion-text"><span style="color: #89c011;">2. </span>Which of these funding priorities interest you? <span style="color: #333;font-weight: 400;"><em>(check all that apply)</em></span></p>
+                <label for="#">
+                  <input type="checkbox" id="#" />&nbsp;Research
+                </label>
+                <label for="#">
+                  <input type="checkbox" id="#" />&nbsp;Advocacy and Awareness Initiatives
+                </label>
+                <label for="#">
+                  <input type="checkbox" id="#" />&nbsp;Support for Patient Families
+                </label>
+                <label for="input1_4" style="display: inline-block">
+                  <input type="checkbox" id="input1_4" name="input1" />
+                  Other:
+                </label>
+                <input
+                  class="other-input"
+                  type="text"
+                  id="input1_4"
+                  name="input1"
+                />
+              </li>
+              <li style="background-color: #e5f8fd;">
+                <p class="qustion-text">
+                  <span style="color: #89c011;">3. </span>What is your connection to the Pediatric Brain Tumor
+                  Foundation? <span style="color: #333;font-weight: 400;"><em>(check all that apply)</em></span>
+                </p>
+                <label for="#">
+                  <input type="checkbox" id="#" />&nbsp;Adult Survivor
+                </label>
+                <label for="#">
+                  <input type="checkbox" id="#" />&nbsp;Patient Family Member
+                </label>
+                <label for="#">
+                  <input type="checkbox" id="#" />&nbsp;Friend
+                </label>
+                <label for="#">
+                  <input type="checkbox" id="#" />&nbsp;Medical Professional
+                </label>
+                <label for="input1_4" style="display: inline-block">
+                  <input type="checkbox" id="input1_4" name="input1" />
+                  Other:
+                </label>
+                <input
+                  class="other-input"
+                  type="text"
+                  id="input1_4"
+                  name="input1"
+                />
+              </li>
+              <li>
+                <p class="qustion-text"><span style="color: #89c011;">4. </span>What motivated you to make your recent gift?</p>
+                <label for="inputarea">
+                  <textarea
+                    class="notearea"
+                    id="inputarea"
+                    rows="3"
+                    cols="50"
+                    style="
+                      line-height: normal;
+                      height: 81px;
+                      width: 87%;
+                      font-size: 20px;
+margin-left: 3%;
+                      border: transparent;
+                      resize: none;
+                      background: repeating-linear-gradient(
+                        0,
+                        rgb(255, 255, 255),
+                        rgb(0, 0, 0) 1px,
+                        rgb(255, 255, 255) 1px,
+                        white 28px
+                      )
+                    "
+                  ></textarea>
+                </label>
+              </li>
+            </ul>
+            <h4 style="margin-bottom: 30px; margin-top: 20px; padding-left: 5%; color: #ed1c24; font-weight: 600;">
+              One more thing! Please tell us your:
+            </h4>
+
+            <form action="#" style="padding-left: 5%; ">
+              <label for="nameid" style="font-size: 14px">First Name:</label>
+              <input
+                class="form-input"
+                type="text"
+                name="name"
+                id="nameid"
+                style="width: 90%"
+              />
+              <label for="nameid" style="font-size: 14px">Last Name:</label>
+              <input
+                class="form-input"
+                type="text"
+                name="name"
+                id="nameid"
+                style="width: 90%"
+              />
+              <label for="nameid" style="font-size: 14px">Email Address:</label>
+              <input
+                class="form-input"
+                type="text"
+                name="name"
+                id="nameid"
+                style="width: 90%"
+              />
+              <label for="nameid" style="font-size: 14px">Mobile Number:</label>
+              <input
+                class="form-input"
+                type="text"
+                name="name"
+                id="nameid"
+                style="width: 90%"
+              />
+              <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 90%;">
+              <input class="bttn" type="button" onclick="showpopup()" value="SEND MY ANSWERS!"/></div>
+            </form>
+          </span>
+          <span class="col-12 col-lg-6"
+            ><img src="img/imback.png" style="width: 100%" alt="img"
+          /></span>
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+            padding-top: 20px;
+          "
+        >
+        <ul
+                style="
+                  list-style: none;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-left: 0;
+                "
+              >
+                <li style="padding: 0;"><a href="https://www.facebook.com/curethekids/"><img src="img/fb-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://twitter.com/PBTF"><img src="img/twitter-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://instagram.com/pbtf_events"><img src="img/insta-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://www.linkedin.com/company/pediatric-brain-tumor-foundation"><img src="img/linkedin-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://youtube.com/c/PediatricBrainTumorFoundation"><img src="img/youtube-icon.png" style="width: 43px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://vm.tiktok.com/TTPdM2uoVM/"><img src="img/tiktok-icon.png" style="width: 50px;" /></a></li>
+              </ul>
+          <div style="margin-top: 30px; width: 70%">
+            <p class="foot_text">
+              <strong
+                >Pediatric Brain Tumor Foundation of the United States,
+                Inc.</strong
+              >
+            </p>
+            <p class="foot_text">
+              6065 Roswell Road NE, Suite 505, Atlanta, GA 30328
+            </p>
+            <p class="foot_text">
+              800-253-6530 | <a href="http://www.curethekids.org/about-us/contact.html">Contact Us</a> | <a href="https://pursuant8.com/pbtf/2022/jan/landing/LP4.html">Donate</a>
+            </p>
+          </div>
+          <div style="margin-top: 50px; width: 70%">
+            <p class="foot_text">
+              <i 
+                >Copyright &#169; Pediatric Brain Tumor Foundation&#174; All
+                rights reserved.</i
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showpopup() {
+        document.querySelector('.popup').style.top = 'calc(50% - 150px)'
+      }
+      
+      function hidepopup() {
+        document.querySelector('.popup').style.display = 'none'
+      }
+    </script>
+  </body>
+</html>

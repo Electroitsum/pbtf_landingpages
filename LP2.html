@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>PBTF</title>
+    <style type="text/css">
+      @font-face {
+        font-family: GothamBookRegular;
+        src: url("fonts/GothamBookRegular.otf");
+      }
+      @font-face {
+        font-family: GothamMedium;
+        src: url("fonts/GothamMedium.otf");
+      }
+      @font-face {
+        font-family: GothamBold;
+        src: url("fonts/GothamBold.otf");
+      }
+      body {
+        background-color: #f2f2f2;
+        font-family: GothamBookRegular;
+      }
+      .heading {
+        font-size: 48px; text-align: center; margin-top: 50px; color: #1180c4;
+      }
+      .sub-heading {
+        text-align: center; margin-bottom: 30px; color: #1180c4;
+      }
+      .main-cont {
+        height: 100%;
+        width: 100%;
+        background-color: white;
+      }
+
+      .bodyhead {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100px;
+        padding: 20px;
+      }
+
+      .bodyback {
+        height: 560px;
+        background-image: url("img/videoback.png");
+        /* background-size: cover; */
+        /* display: flex;
+        align-items: center;
+        justify-content: center; */
+        position: relative;
+      }
+      .foot_text {
+        text-align: center;
+        margin: 0;
+      }
+
+      .videoarea{
+        width:100%;
+        height: 84%;
+      }
+      .para-text {
+        margin-bottom: 20px; padding-right: 80px; padding-left: 80px; font-size: 17px;
+      }
+      .video {
+        height: 92%;
+        width: 100%;
+        /* object-fit: fill; */
+      }
+
+      .play-icon {
+        position: absolute;
+        background-color: white;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 70px;
+        height: 70px;
+        background-color: rgba(255,255,255,0.9);
+        border-radius: 50%;
+        left: calc(50% - 35px);
+        top: calc(50% - 35px);
+        cursor: pointer;
+        z-index: 100;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .video {
+          object-fit: fill;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .video {
+          object-fit: fill;
+        }
+        .bodyback {
+          background-size: cover;
+          height: 441px;
+        }
+      }
+
+      @media screen and (max-width: 540px) {
+        .para-text {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+        .bodyback {
+          height: 328px;
+        }
+      }
+      @media screen and (max-width: 420px) {
+        .heading {
+          font-size: 30px
+        }
+        .sub-.heading {
+          font-size: 20px;
+        }
+        .bodyhead img {
+          height: 80px;
+        }
+        .bodyback {
+          height: 250px;
+        }
+      }
+      @media screen and (max-width: 375px) {
+        .heading {
+          font-size: 24px
+        }
+        .sub-heading {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main-cont">
+        <div class="bodyhead">
+          <a href="http://www.curethekids.org/" target="_blank"><img src="img/logo.png" alt="logo.png" /></a>
+        </div>
+        <div class="bodyback">
+            <!-- <span class="videoarea"> -->
+              <span class="play-icon" onclick="playvideo()">
+              <img  src="img/play-icon.png">
+            </span>
+              <video class="video" src="2021_Dreams_Updated_for_NDWS_1080p.mp4"></video>
+            <!-- </span> -->
+        </div>
+        <div>
+            <h2 class="heading" style="font-family: GothamBold">YOUR SUPPORT IN ACTION</h2>
+            <h3 class="sub-heading" style="font-family: GothamMedium">YOU’RE MAKING LIFE BETTER FOR CHILDREN</h3>
+            <p class="para-text">Every day, 13 children and teens are diagnosed with a brain tumor, the deadliest form of childhood cancer. Every day after, they are in a fight for their life.</p>
+            <p class="para-text">It's a fight that the Pediatric Brain Tumor Foundation is here to help families win.</p>
+            <p class="para-text">PBTF's mission of <span style="font-family: GothamBold;">Care. Cure. Thrive.</span> reflects our commitment to curing all pediatric brain tumors and transforming how children and their families are cared for. </p>
+            <p class="para-text">Watch this video to see how we’re working to bring real, meaningful change, so that a world without childhood brain tumors is possible.</p>
+            <p class="para-text" style="margin-bottom: 100px;">Thank you for your support!</p>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+            padding-top: 20px;
+          "
+        >
+        <ul
+                style="
+                  list-style: none;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-left: 0;
+                "
+              >
+                <li style="padding: 0;"><a href="https://www.facebook.com/curethekids/"><img src="img/fb-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://twitter.com/PBTF"><img src="img/twitter-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://instagram.com/pbtf_events"><img src="img/insta-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://www.linkedin.com/company/pediatric-brain-tumor-foundation"><img src="img/linkedin-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://youtube.com/c/PediatricBrainTumorFoundation"><img src="img/youtube-icon.png" style="width: 43px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://vm.tiktok.com/TTPdM2uoVM/"><img src="img/tiktok-icon.png" style="width: 50px;" /></a></li>
+              </ul>
+          <div style="margin-top: 30px; width: 70%">
+            <p class="foot_text">
+              <strong
+                >Pediatric Brain Tumor Foundation of the United States,
+                Inc.</strong
+              >
+            </p>
+            <p class="foot_text">
+              6065 Roswell Road NE, Suite 505, Atlanta, GA 30328
+            </p>
+            <p class="foot_text">
+              800-253-6530 | <a href="http://www.curethekids.org/about-us/contact.html">Contact Us</a> | <a href="https://pursuant8.com/pbtf/2022/jan/landing/LP4.html">Donate</a>
+            </p>
+          </div>
+          <div style="margin-top: 50px; width: 70%">
+            <p class="foot_text">
+              <i 
+                >Copyright &#169; Pediatric Brain Tumor Foundation&#174; All
+                rights reserved.</i
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function playvideo() {
+        document.querySelector('.play-icon').style.display = 'none'
+        document.querySelector('.video').play()
+      }
+    </script>
+  </body>
+</html>

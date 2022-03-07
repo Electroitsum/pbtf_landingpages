@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>PBTF</title>
+    <style type="text/css">
+      @font-face {
+        font-family: GothamBookRegular;
+        src: url("fonts/GothamBookRegular.otf");
+      }
+      @font-face {
+        font-family: GothamMedium;
+        src: url("fonts/GothamMedium.otf");
+      }
+      @font-face {
+        font-family: GothamBold;
+        src: url("fonts/GothamBold.otf");
+      }
+      body {
+        background-color: #f2f2f2;
+        font-family: GothamBookRegular;
+      }
+      .main-cont {
+        height: 100%;
+        width: 100%;
+        background-color: #FED20A;
+      }
+
+      .bodyhead {
+        display: flex;
+        align-items: center;
+        min-height: 100px;
+        padding: 20px;
+        background-color: #dedede;
+      }
+
+      .bodyback {
+        height: 560px;
+        background-image: url("img/videoback.png");
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .section {
+          padding: 35px 30% 35px 35px;
+      }
+      .section-container {
+          background-color: white;
+          border-radius: 5px;
+          padding: 35px;
+      }
+      .foot_text {
+        text-align: center;
+        margin: 0;
+      }
+
+      .heading {
+        font-size: 48px;
+              color: #1180c4;
+              margin-bottom: 54px;
+      }
+
+      .para-text {
+        margin-bottom: 20px; color: #414141; font-size: 17px
+      }
+
+      .tabs-btn {
+          width: 80%;
+          height: 48px;
+          border-radius: 4px;          
+          margin-bottom: 24px;
+          display: table;
+          margin-top: 100px;
+      }
+
+      .tabs-btn span {
+          width: 50%;
+          height: 100%;
+          margin: 0;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 15px;
+          font-weight: 600;
+          color: #1180c4;
+          border: 2px solid #1180c4;
+          cursor: pointer;
+      }
+
+      .tabs-btn span.active {
+          background-color: #1180c4;
+          color: white;
+      }
+
+      .choose-amount-div {
+          margin-bottom: 14px;
+          width: 80%;
+      }
+      
+      .choose-amount-div .amount-box {
+          display: inline-flex;
+          width: 12%;
+          background-color: #c9e2f1;
+          justify-content: center;
+          align-items: center;
+          height: 42px;
+          margin-right: 5px;
+          color: #333;
+          font-weight: 600;
+          font-size: 15px;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      .choose-amount-div .amount-box-active {
+          display: inline-flex;
+          width: 12%;
+          background-color: #1180c4;;
+          justify-content: center;
+          align-items: center;
+          height: 42px;
+          margin-right: 5px;
+          color: white;
+          font-weight: 600;
+          font-size: 15px;
+          border-radius: 4px;
+          cursor: pointer;
+      }
+
+      .usd-amount-container {
+          border-radius: 4px;
+          border: 2px solid #666;
+          display: inline-flex;
+          overflow: hidden;
+          height: 42px;
+          width: calc(100% - 48% - 20px);
+      }
+
+      .usd-amount-container .box-1 {
+          display: inline-flex;
+          height: 42px;
+          justify-content: center;
+          align-items: center;
+          width: 70px;
+          border-right: 2px solid #333;
+      }
+
+      .usd-amount-container input {
+          width: 100%;
+          margin-left: 5px;
+         border: none;
+         outline: none;
+         font-style: oblique;
+         font-size: 14px;
+      }
+
+      .company-inputbox {
+          width: 80%;
+          border: 2px solid #666;
+          border-radius: 4px;
+          height: 42px;
+          font-size: 14px;
+      }
+
+      .fundraiser-inputbox {
+        width: 60%;
+          border: 2px solid #666;
+          border-radius: 4px;
+          height: 42px;
+          font-style: oblique;
+          font-size: 14px;
+      }
+
+      .divider {
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+
+      .divider-1 {
+          width: 80%;
+      }
+
+      .donation-input-form {
+          width: 80%;
+      }
+      .fname-input,
+      .lname-input,
+      .email-input,
+      .phone-input,
+      .comment-input,
+      .company-input {
+          display: flex;
+          flex-direction: column;
+      }
+
+      .fname-input span,
+      .lname-input span,
+      .email-input span,
+      .phone-input span,
+      .comment-input span,
+      .company-input span {
+          font-size: 14px;
+          /* font-weight: 600; */
+          display: inline-block;
+          margin-bottom: 5px;
+      }
+
+      .fname-input input,
+      .lname-input input,
+      .email-input input,
+      .phone-input input,
+      .comment-input input,
+      .company-input input {
+          border-radius: 4px;
+          border: 2px solid #666;
+          height: 42px;
+      }
+
+      .fname-input {
+          width: 49.5%;
+          margin-right: 10px;
+      }
+
+      .lname-input {
+          width: 49.5%;
+      }
+      .comment-input textarea {
+          border-radius: 4px;
+          border: 2px solid #666;
+          min-height: 80px;
+      }
+
+      .phone-input {
+          margin-top: 30px;
+          margin-bottom: 20px;
+      }
+
+      .phone-input input,
+      .company-input input {
+          width: 50%;
+      }
+
+      .comment-input {
+          margin-bottom: 40px;
+      }
+
+      .payment-section {
+        display: flex;
+        width: 100%;
+      }
+
+      .payment-section .left-section{
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+      }
+
+      .payment-section .right-section{
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+      }
+
+      .g-pay-btn {
+        background: #000;
+    color: #fff;
+    border-radius: 4px;
+    max-width: 350px;
+    min-height: 40px;
+    width: 100%;
+    padding: 10px;
+    font-family: mulish,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+      }
+
+      .classic-pay-btn {
+          background-color: #1180c4;
+        color: #fff;
+    border-radius: 4px;
+    max-width: 350px;
+    min-height: 40px;
+    height: 40px;
+    width: 100%;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+      }
+
+      @media screen and (max-width: 1024px) {
+        .section {
+            padding: 35px;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .tabs-btn {
+            width: 100%;
+        }
+        .choose-amount-div {
+            width: 100%;
+        }
+        .company-inputbox {
+            width: 100%;
+        }
+        .fundraiser-inputbox {
+            width: 100%;
+        }
+        .divider-1 {
+            width: 100%;
+        }
+        .donation-input-form {
+            width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 540px) {
+        .section {
+            padding: 10px;
+        }
+        .heading {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        .section-container {padding: 15px;}
+        .choose-amount-div .amount-box {
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        .usd-amount-container {
+            width: calc(100% - 120px);
+        }
+        .payment-section {
+            flex-direction: column;
+        }
+        .payment-section .left-section {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .payment-section .right-section {
+            width: 100%;
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        .bodyhead img {
+          height: 80px;
+        }
+        .para-text {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+        .last-line {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid p-0">
+      <div class="main-cont">
+        <div class="bodyhead">
+          <a href="http://www.curethekids.org/"  target="_blank"><img src="img/logo.png" alt="logo.png" /></a>
+        </div>
+
+        <div class="section">
+            <div class="section-container">
+                <div class="heading">
+                  Make Life Better for Children Fighting Brain Tumors
+                </div>
+                <img src="img/lp4RECover.jpg" height="300px" style="margin-bottom: 54px;">
+                <p class="para-text">
+                    The Pediatric Brain Tumor Foundation’s mission is to <strong style="font-family: GothamBold;">care</strong> for families along their journey, <strong style="font-family: GothamBold;">cure</strong> all childhood brain tumors, and help survivors and families <strong style="font-family: GothamBold;">thrive</strong>.
+                </p>
+                <p class="para-text">
+                    Your gift today helps provide strategic leadership and funding to accelerate the number of targeted therapies for children battling brain tumors today, while equipping families with the patient family education, financial relief, and emotional support they need to navigate their child's journey.
+                </p>
+                <p class="para-text">
+                    Thank you!
+                </p>
+
+                <div class="tabs-btn">
+                    <span class="tabs-btn-1" onclick="selectpay(1)">ONE TIME</span>
+                    <span class="tabs-btn-2" onclick="selectpay(2)">MONTHLY</span>
+                </div>
+                <div class="choose-amount-div">
+                    <div>Choose a <strong><span class="one-time-text">one-time</span><span class="monthly-text">monthly</span></strong> amount</div>
+                    <div class="w-100 d-flex flex-wrap">
+                        <span id="amt" class="amount-box amount-box-active" onclick="selectedamt(this)">$25</span>
+                        <span id="amt" class="amount-box" onclick="selectedamt(this)">$50</span>
+                        <span id="amt" class="amount-box" onclick="selectedamt(this)">$100</span>
+                        <span id="amt" class="amount-box" onclick="selectedamt(this)">$500</span>
+                        <div class="usd-amount-container">
+                            <span class="box-1" style="font-weight: 15px;font-weight: 600;">USD</span>
+                            <span style="font-weight: 600;font-size: 20px;margin-top: 3px;margin-left: 5px;">$</span>
+                            <input type="text" placeholder="other">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="checkbox">&nbsp;<span style="font-size: 14px;">Dedicate my donation <strong>in honor or in memory</strong> of someone</span>
+                </div>
+                <div>
+                    <input type="checkbox">&nbsp;<span style="font-size: 14px;">See if your employer will match your donation</span>
+                </div>
+
+                <p></p>
+                
+                <div style="margin-top: 30px;">
+                    <h6 style="font-size: 14px;font-weight: 600;">Company</h6>
+                    <input type="text" class="company-inputbox" placeholder="Search company name...">
+                </div>
+                <div style="margin-top: 30px;">
+                    <h6 style="font-size: 14px;font-weight: 600;">Would you like to credit this donation to a specific fundraiser or team (optional)?</h6>
+                    <input type="text" class="fundraiser-inputbox" placeholder="Start typing to search fundraisers and teams">
+                </div>
+                
+                <hr class="divider divider-1">
+
+                <div class="donation-input-form">
+                    <h4 style="font-weight: 600;margin-bottom: 30px;">Your Information</h4>
+                    <div class="w-100 d-flex">
+                        <div class="fname-input">
+                            <span>First Name <span style="color: red;">*</span></span>
+                            <input type="text">
+                        </div>
+                        <div class="lname-input">
+                            <span>Last Name <span style="color: red;">*</span></span>
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div style="margin-top: 5px;margin-bottom: 30px;">
+                        <input type="checkbox">&nbsp;<span style="font-size: 14px;">Don't show my name publicly.</span>
+                    </div>
+
+                    <div class="email-input">
+                        <span>Email <span style="color: red;">*</span></span>
+                        <input type="email">
+                        <p style="font-size: 14px;margin-top: 5px;">Your receipt will be emailed here.</p>
+                    </div>
+
+                    <div>
+                        <input type="checkbox">&nbsp;<span style="font-size: 14px;">It's okay to contact me in the future.</span>
+                    </div>
+
+                    <div class="phone-input">
+                        <span>Phone Number</span>
+                        <input type="text">
+                    </div>
+
+                    <div class="comment-input">
+                        <span>Leave a comment</span>
+                        <textarea></textarea>
+                    </div>
+
+                    <div class="company-input">
+                        <span>Company</span>
+                        <input type="text">
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="payment-section">
+                        <div class="left-section">
+                            <span style="font-size: 14px;font-weight: 600;">One-time donation</span>
+                            <span id="tamount" style="font-size: 20px;font-weight: 700;">$25.00 <span style="font-size: 16px;font-weight: 600;">USD</span></span>
+                            <div style="margin-top: 20px;display: flex;">
+                                <input type="checkbox">
+                                <span style="font-size: 10px;font-weight: 600; margin-left: 5px;">
+                                    I'd like to cover the fees associated with my donation so more of my donation goes directly to the Pediatric Brain Tumor Foundation.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="right-section">
+                            <span style="font-size: 14px;font-weight: 600;color: #333;">By clicking the donate button, I agree to the <a href="#" style="color: #333;">Terms of Service</a> and <a href="#" style="color: #333;">Privacy Policy</a>.</span>
+                            <div class="g-pay-btn">DONATE WITH&nbsp;<img height="25px" src="img/google-icon.png">&nbsp;PAY</div>
+                            <div class="classic-pay-btn">CREDIT CARD</div>
+                            <div class="classic-pay-btn">BANK TRANSFER</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            background-color: #f8f8f8;
+            padding-bottom: 50px;
+            padding-top: 20px;
+          "
+        >
+        <ul
+                style="
+                  list-style: none;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  padding-left: 0;
+                "
+              >
+                <li style="padding: 0;"><a href="https://www.facebook.com/curethekids/"><img src="img/fb-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://twitter.com/PBTF"><img src="img/twitter-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://instagram.com/pbtf_events"><img src="img/insta-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://www.linkedin.com/company/pediatric-brain-tumor-foundation"><img src="img/linkedin-icon.png" style="width: 50px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://youtube.com/c/PediatricBrainTumorFoundation"><img src="img/youtube-icon.png" style="width: 43px;margin-right: 5px" /></a></li>
+                <li style="padding: 0;"><a href="https://vm.tiktok.com/TTPdM2uoVM/"><img src="img/tiktok-icon.png" style="width: 50px;" /></a></li>
+              </ul>
+          <div style="margin-top: 30px; width: 70%">
+            <p class="foot_text">
+              <strong
+                >Pediatric Brain Tumor Foundation of the United States,
+                Inc.</strong
+              >
+            </p>
+            <p class="foot_text">
+              6065 Roswell Road NE, Suite 505, Atlanta, GA 30328
+            </p>
+            <p class="foot_text">
+              800-253-6530 | <a href="http://www.curethekids.org/about-us/contact.html">Contact Us</a> | <a href="https://pursuant8.com/pbtf/2022/jan/landing/LP4.html">Donate</a>
+            </p>
+          </div>
+          <div style="margin-top: 50px; width: 70%">
+            <p class="foot_text">
+              <i
+                >Copyright &#169; Pediatric Brain Tumor Foundation&#174; All
+                rights reserved.</i
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        const oneTimeText = document.querySelector('.one-time-text')
+        const monthlyText = document.querySelector('.monthly-text')
+
+        monthlyText.style.display = 'none'
+
+        const Tab1 = document.querySelector('.tabs-btn-1')
+        const Tab2 = document.querySelector('.tabs-btn-2')
+
+        Tab1.classList.add('active')
+
+        function selectpay(value) {
+            if(value == 1) {
+                Tab1.classList.add('active')
+                Tab2.classList.remove('active')
+                monthlyText.style.display = 'none'
+                oneTimeText.style.display = 'inline'
+            }
+            else {
+                Tab2.classList.add('active')
+                Tab1.classList.remove('active')
+                monthlyText.style.display = 'inline'
+                oneTimeText.style.display = 'none'
+            }
+        }
+
+
+        function selectedamt(curramt){
+          const amountSelector = document.querySelectorAll("#amt");
+
+          amountSelector.forEach(element => {
+
+            element.classList.remove("amount-box-active");
+            
+          });
+          console.log(curramt);
+                    curramt.classList.add("amount-box-active");
+                    document.querySelector("#tamount").innerText = curramt.innerText;
+
+        }
+    </script>
+  </body>
+</html>
